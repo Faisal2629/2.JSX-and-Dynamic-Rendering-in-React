@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Create a simple JSX paragraph element
+      const paragraph = <p>Seize the day</p>;
+
+      // Render it into the div with id 'root'
+      ReactDOM.render(paragraph, document.getElementById('root'));
+    </script>
+    <script type="text/babel">
+        // Define a JavaScript variable for dynamic content
+        const message = "Seize the day";
+      
+        // Use the variable in the JSX code
+        const dynamicParagraph = <p>{message}</p>;
+      
+        // Render it inside the div with id 'root'
+        ReactDOM.render(dynamicParagraph, document.getElementById('root'));
+      </script>
+<script type="text/babel">
+    // Create a boolean variable
+    const showFirstMessage = true;
+  
+    // Conditionally render one of two paragraphs
+    const conditionalParagraph = showFirstMessage ? (
+      <p>Seize the day</p>
+    ) : (
+      <p>Carpe Diem</p>
+    );
+  
+    // Render the correct paragraph inside the div with id 'root'
+    ReactDOM.render(conditionalParagraph, document.getElementById('root'));
+  </script>
+        
+  </body>
+</html>
